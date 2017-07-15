@@ -20,13 +20,20 @@ public abstract class Atom {
 		return name;
 	}
 	
-	public void bondAtom( Atom a, int numBonds ) {
+	public void bondAtom( Atom a, int numBonds ) throws IllegalArgumentException{
 		linkedAtoms.put( a, numBonds );
 		numJoinedAtoms += numBonds;
+		if( numJoinedAtoms > valency ) {
+			throw new IllegalArgumentException( "Number of bonds more than valency" );
+		}
 	}
 	
 	public boolean isValencySatisfied() {
 		return numJoinedAtoms == valency;
+	}
+	
+	public Map<Atom, Integer> getLinkedAtoms(){
+		return linkedAtoms;
 	}
 	
 	public int numAtomsOf( Class<? extends Atom> c ) {

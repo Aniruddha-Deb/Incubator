@@ -8,4 +8,15 @@ public class CarbonAtom extends Atom {
 	public CarbonAtom() {
 		super( name, valency );
 	}
+	
+	public String getCompleteName() {
+		String name = "C";
+		for( Atom a : getLinkedAtoms().keySet() ) {
+			if( !( a instanceof CarbonAtom ) ) {
+				name += a.getName();
+			}
+		}
+		
+		return name;
+	}
 }
