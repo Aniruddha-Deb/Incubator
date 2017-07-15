@@ -1,4 +1,4 @@
-package com.sensei.hexane.core.atom;
+package com.sensei.hexane.core.chem.atom;
 
 public class CarbonAtom extends Atom {
 

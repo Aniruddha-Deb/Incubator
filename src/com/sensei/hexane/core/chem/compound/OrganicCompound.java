@@ -1,11 +1,11 @@
-package com.sensei.hexane.core;
+package com.sensei.hexane.core.chem.compound;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sensei.hexane.core.atom.Atom;
-import com.sensei.hexane.core.atom.CarbonAtom;
-import com.sensei.hexane.core.atom.HydrogenAtom;
+import com.sensei.hexane.core.chem.atom.Atom;
+import com.sensei.hexane.core.chem.atom.CarbonAtom;
+import com.sensei.hexane.core.chem.atom.HydrogenAtom;
 import com.sensei.hexane.core.data.PrefixMap;
 
 public class OrganicCompound {

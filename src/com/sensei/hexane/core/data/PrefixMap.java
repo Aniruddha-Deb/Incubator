@@ -29,5 +29,12 @@ public class PrefixMap extends HashMap<String, Integer>{
 		super.put( "hex",  6 );
 		super.put( "hept", 7 );
 		super.put( "oct",  8 );
+		super.put( "non",  9 );
+		super.put( "dec",   10 );		
+		super.put( "undec", 11 );
+		super.put( "dodec", 12 );
+		super.put( "tridec", 13 );
+		super.put( "tetradec", 14 );
+		super.put( "pentadec", 15 );
 	}
 }
