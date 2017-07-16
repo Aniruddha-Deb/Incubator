@@ -16,6 +16,7 @@ public class OrganicCompound {
 	public String toString() {
 
 		String s = carbonAtoms.get( 0 ).getCompleteName();
+				
 		for( int i=1; i<carbonAtoms.size(); i++ ) {
 			int numBonds = carbonAtoms.get( i ).getLinkedAtoms().get( carbonAtoms.get( i-1 ) );
 			if( numBonds == 1 ) { 

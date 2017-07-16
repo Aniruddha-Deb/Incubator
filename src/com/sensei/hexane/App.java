@@ -12,12 +12,14 @@ public class App {
 	public static void main( String[] args ) {
 
 		Scanner sc = new Scanner( System.in );
-		while( true ) {
-			String input = sc.nextLine().toLowerCase();
+		String input = "";
+		while( !( input.equals( "exit" ) ) ) {
+			input = sc.nextLine().toLowerCase();
 			CompoundDescriptor desc = InputLexer.generateDescriptor( input );
 			OrganicCompound oc = CompoundFactory.generateCompound( desc );
 			
 			System.out.println( oc.toString() );
 		}
+		sc.close();
 	}
 }
