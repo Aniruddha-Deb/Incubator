@@ -3,6 +3,10 @@ package com.sensei.plugin.dummies.dummy1;
 import com.sensei.plugin.Plugin;
 
 public class EntryPoint implements Plugin {
+	
+	public EntryPoint() {
+		Cat.printName();
+	}
 
 	@Override
 	public byte[] getIcon(){
