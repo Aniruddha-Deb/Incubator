@@ -11,13 +11,12 @@ import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
+import com.sensei.prefs.UserPreferences;
+
 public class PluginLoader {
 	
 	private static List<Plugin> plugins = null;
-	// TODO use the Java preferences API to store this globally
-	private static final String PLUGINS_LOCATION = 
-							"res.plugins".replace( '.', File.separatorChar );
-	private static final String ENTRY_POINT = "EntryPoint";
+	private static final String ENTRY_POINT = "EntryPoint";	
 	
 	public static List<Plugin> getPlugins() {
 		if( plugins == null ) {
@@ -35,7 +34,9 @@ public class PluginLoader {
 		plugins = new ArrayList<>();
 		System.gc();
 		
-		File dir = new File( PLUGINS_LOCATION );
+		String pluginLocation = UserPreferences.instance().getPreference( 
+				UserPreferences.PLUGINS_DIR_KEY ).replace( '.', File.separatorChar );
+		File dir = new File( pluginLocation );
 		
 		for( File f : dir.listFiles() ) {
 			
@@ -67,8 +68,10 @@ public class PluginLoader {
 	
 	private static URL getJarUrl( String jarName ) {
 		try {
+			String pluginLocation = UserPreferences.instance().getPreference( 
+					UserPreferences.PLUGINS_DIR_KEY ).replace( '.', File.separatorChar );
 			return new URL( 
-				"jar:file:" + PLUGINS_LOCATION + File.separatorChar + jarName + 
+				"jar:file:" + pluginLocation + File.separatorChar + jarName + 
 				"!" + File.separatorChar );
 		}
 		catch( MalformedURLException e ) {
