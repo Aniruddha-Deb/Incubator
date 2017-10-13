@@ -15,7 +15,7 @@ public class Mines extends Application{
 		int[][] mines = MinefieldGenerator.generate( 10, 10, 10 );
 		
 		Scene s = new Scene( new Minefield( mines, 10 ), 400, 400 );
-		primaryStage.setTitle( "Mines" );
+		primaryStage.setTitle( "Mines by Deb" );
 		primaryStage.setScene( s );
 		primaryStage.show();
 	}
