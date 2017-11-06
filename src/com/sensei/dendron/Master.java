@@ -14,6 +14,8 @@ public class Master {
 		while( true ) {
 			Socket s = ss.accept();
 			System.out.println( s.toString() + "connected" );
+			s.getOutputStream().write( 222 );
+			s.getOutputStream().flush();
 			connectedSlaves.add( s );
 		}		
 	}
