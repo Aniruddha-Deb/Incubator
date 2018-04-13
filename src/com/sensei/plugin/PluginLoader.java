@@ -46,6 +46,9 @@ public class PluginLoader {
 			URL[] urls = { getJarUrl( f.getName() ) };
 			URLClassLoader cl = URLClassLoader.newInstance(urls);
 			
+			// TODO read the manifest to find the location of the entry point 
+			// instead of looking through all the entries in the JAR.
+
 			while( entries.hasMoreElements() ) {
 				
 				JarEntry je = entries.nextElement();

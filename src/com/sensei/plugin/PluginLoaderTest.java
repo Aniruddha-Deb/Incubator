@@ -5,6 +5,7 @@ import java.util.List;
 public class PluginLoaderTest {
 	
 	public static void main( String[] args ) throws Exception{
+		
 		List<Plugin> plugins = PluginLoader.getPlugins();
 		for( Plugin p : plugins ) {
 			System.out.println( "Loaded a Plugin" );
